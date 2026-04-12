@@ -11,13 +11,13 @@
     <script src="../sideBar.js"></script>
     <div class="mainContent" style="grid-column: 2;">
         <section>
-            <h4 class="pageCategory">FOUNDATION_MODULE_07</h4>
-            <h1 class="pageTitle">image_ratios<span>.fra</span></h1>
+            <h4>FOUNDATION_MODULE_07</h4>
+            <h1>image_ratios<span>.fra</span></h1>
             <p>Ratios keep imagery from feeling improvised. Think 4:3 monitors, contact sheets, and film frames--consistent shapes that make the system feel curated.</p>
             <p>Aspect ratio refers to the proportional relationship between the width and height of an image or video frame. Maintaining consistent ratios helps to create a visual rhythm throughout the interface, supports alignment within the grid system, and ensures that the presentation of media appears structured. This design system utilizes a limited set of standard ratios to accommodate the various media types present, such as short films, video games, photography, and documentation.</p>
         </section>
         <section>
-            <h2 class="pageSubtitle">ratio_rules<span>.rul</span></h2>
+            <h2>ratio_rules<span>.rul</span></h2>
             <p>Choose a small set (1:1, 4:3, 16:9) and stick to it. When in doubt, default to the ratio that preserves the subject without awkward cropping.</p>
 
             <table aria-label="Ratio roles table">
@@ -64,7 +64,7 @@
             </table>
         </section>
         <section>
-            <h2 class="pageSubtitle">ratio_demonstrations<span>.demo</span></h2>
+            <h2>ratio_demonstrations<span>.demo</span></h2>
             <p>Show the same image across approved frames with safe areas marked, like a camera viewfinder. Demonstrations should teach how cropping behaves, not just what looks cool.</p>
 
             <figure class="demoPanel" aria-label="Ratio demonstration showcase">
@@ -124,12 +124,12 @@
             </figure>
         </section>
         <section>
-            <h2 class="pageSubtitle">system_logic<span>.log</span></h2>
+            <h2>system_logic<span>.log</span></h2>
             <p>Let content pick the frame: portraits lean 4:3, banners lean 16:9, avatars stay 1:1. The rule is simple: predictable containers, flexible media inside.</p>
             <p>They must work with the grid system to create predictable media layers.</p>
         </section>
         <section>
-            <h2 class="pageSubtitle">css_implementation<span>.css</span></h2>
+            <h2>css_implementation<span>.css</span></h2>
             <p>Use <code>aspect-ratio</code> to lock container shape, then let the media fill it (e.g., <code>object-fit: cover</code> for images).</p>
             <pre><code>.ratioFrame { aspect-ratio: 16 / 9; }
 

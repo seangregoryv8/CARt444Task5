@@ -19,7 +19,7 @@ function setSidebar()
     let indexTitle = document.createElement("a");
     indexTitle.classList.add("indexTitle");
     indexTitle.href = "index.html";
-    let titles = ["CART_444", "sean_gregory", "design_systems"];
+    let titles = ["sean_gregory", "computer_scientist", "filmmaker"];
     let p;
     for (let i = 0; i < titles.length; i++)
     {
@@ -61,7 +61,7 @@ function setSidebar()
 
     addParagraph("overview.all");
     addLink("index.html", "home", "brd");
-    addLink("philosophy.html", "philosophy", "pla")
+    addLink("philosophy.html", "philosophy", "pla");
 
     addBreak();
     addParagraph("foundation (1).col");

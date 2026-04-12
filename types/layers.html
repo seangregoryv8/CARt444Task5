@@ -11,12 +11,12 @@
     <script src="../sideBar.js"></script>
     <div class="mainContent" style="grid-column: 2;">
         <section>
-            <h4 class="pageCategory">FOUNDATION_MODULE_04</h4>
-            <h1 class="pageTitle">layer_stack<span>.str</span></h1>
+            <h4>FOUNDATION_MODULE_04</h4>
+            <h1>layer_stack<span>.str</span></h1>
             <p>Layers are the depth rules of the interface: what sits behind, what sits on top, and what must always win focus. In CSS this is mostly controlled by <code>position</code> + <code>z-index</code> (and the stacking contexts they create).</p>
         </section>
         <section>
-            <h2 class="pageSubtitle">layer_history<span>.hist</span></h2>
+            <h2>layer_history<span>.hist</span></h2>
             <p>Think of it like a light table: base paper (background), the drawing (content), acetate notes (elevated UI), then a full-sheet overlay (modal/menu) when you need attention to snap to one place.</p>
             <table aria-label="Layer hierarchy table">
                 <thead>
@@ -56,7 +56,7 @@
             </table>
         </section>
         <section>
-            <h2 class="pageSubtitle">applied_layering_example<span>.demo</span></h2>
+            <h2>applied_layering_example<span>.demo</span></h2>
             <p>The demo below shows the four roles stacked together. Notice that overlay wins, elevated UI sits above content, and content sits above the base canvas.</p>
 
             <figure class="demoPanel" aria-label="Applied layering example">
@@ -102,7 +102,7 @@
             </figure>
         </section>
         <section>
-            <h2 class="pageSubtitle">layer_tokens<span>.tok</span></h2>
+            <h2>layer_tokens<span>.tok</span></h2>
             <p>Tokens make layering predictable: engineers can place things without guessing and designers can review stacks without hunting through random z-index numbers.</p>
             <table aria-label="Layer tokens table">
                 <thead>
@@ -137,7 +137,7 @@
             </table>
         </section>
         <section>
-            <h2 class="pageSubtitle">css_implementation<span>.css</span></h2>
+            <h2>css_implementation<span>.css</span></h2>
             <p>Keep layering predictable by using z-index tokens. Avoid random values like <code>9999</code>; reserve overlays for true focus states.</p>
             <pre><code>:root
 {
