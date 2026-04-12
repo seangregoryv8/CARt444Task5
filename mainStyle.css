@@ -190,6 +190,10 @@ a p
     color: var(--color-accent);
     font-family: var(--font-mono-bold);
 }
+button
+{
+    padding: 20px;
+}
 /* VHS Font */
 @font-face
 {
