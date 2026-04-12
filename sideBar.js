@@ -62,6 +62,7 @@ function setSidebar()
     addParagraph("overview.all");
     addLink("index.html", "home", "brd");
     addLink("philosophy.html", "philosophy", "pla");
+    addLink("projects.html", "projects", "wrk");
 
     addBreak();
     addParagraph("foundation (1).col");
