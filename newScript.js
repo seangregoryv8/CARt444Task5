@@ -55,31 +55,21 @@ document.addEventListener("DOMContentLoaded", () => {
     applyEffects(isEffectsOn);
 });
 
-function addBlackLoadingBox() {
+function addBlackLoadingBox()
+{
     const existing = document.getElementById("blackLoadingBox");
     if (existing) return existing;
 
     const blackBox = document.createElement("div");
-    blackBox.id = "blackLoadingBox";
+    blackBox.classList.add("blackLoadingBox");
     blackBox.setAttribute("aria-hidden", "true");
-
-    blackBox.style.position = "fixed";
-    blackBox.style.left = "15%";
-    blackBox.style.top = "0";
-    blackBox.style.width = "100vw";
-    blackBox.style.height = "100vh";
-    blackBox.style.background = "#000000";
-    blackBox.style.opacity = "1";
-    blackBox.style.zIndex = "10000";
-    blackBox.style.pointerEvents = "none";
-    blackBox.style.transition = "opacity 220ms ease";
 
     document.body.appendChild(blackBox);
     return blackBox;
 }
 
 function removeBlackLoadingBox() {
-    const blackBox = document.getElementById("blackLoadingBox");
+    const blackBox = document.getElementsByClassName("blackLoadingBox")[0];
     if (!blackBox) return;
 
     blackBox.style.opacity = "0";
@@ -90,10 +80,10 @@ addBlackLoadingBox();
 
 setTimeout(() => 
 {
-    document.getElementById("blackLoadingBox").style.opacity = "0.6";
+    document.getElementsByClassName("blackLoadingBox")[0].style.opacity = "0.6";
     setTimeout(() =>
     {
-        document.getElementById("blackLoadingBox").style.opacity = "0.3";
+        document.getElementsByClassName("blackLoadingBox")[0].style.opacity = "0.3";
         setTimeout(() => { removeBlackLoadingBox() }, 500)
     }, 500);
 }, 500);
@@ -104,57 +94,8 @@ async function loadProjects() {
 
     const container = document.getElementById('projectsContainer');
 
-    Object.entries(data).forEach(([key, project]) => {
-        const section = document.createElement('section');
-
-        // Title
-        const title = document.createElement('h2');
-        title.textContent = key;
-        section.appendChild(title);
-
-        // Description (EN only)
-        if (project.description?.en) {
-            project.description.en.forEach(text => {
-                const p = document.createElement('p');
-                p.textContent = text;
-                section.appendChild(p);
-            });
-        }
-
-        // Languages
-        if (project.languages) {
-            const lang = document.createElement('p');
-            lang.innerHTML = `<strong>Tech:</strong> ${project.languages.join(', ')}`;
-            section.appendChild(lang);
-        }
-
-        // Image (if exists)
-        if (project.images) {
-            const link = document.createElement('a');
-            link.href = project.source;
-            link.target = "_blank";
-
-            const img = document.createElement('img');
-            img.src = `./resources/images/${project.images}/main.png`;
-            img.style.width = "100%";
-            img.style.maxWidth = "800px";
-
-            link.appendChild(img);
-            section.appendChild(link);
-        }
-
-        // Source link
-        const source = document.createElement('a');
-        source.href = project.source;
-        source.target = "_blank";
-        source.textContent = ">> launch.exe";
-        section.appendChild(source);
-
-        container.appendChild(section);
-    });
+    fillProjects(data, container);
 }
-
-loadProjects();
 
 async function loadArtProjects() {
     const res = await fetch('./json/film.json');
@@ -162,6 +103,11 @@ async function loadArtProjects() {
 
     const container = document.getElementById('filmContainer');
 
+    fillProjects(data, container);
+}
+
+async function fillProjects(data, container)
+{
     Object.entries(data).forEach(([key, project]) => {
         const section = document.createElement('section');
 
@@ -171,7 +117,8 @@ async function loadArtProjects() {
         section.appendChild(title);
 
         // Description (EN only)
-        if (project.description?.en) {
+        if (project.description?.en)
+        {
             project.description.en.forEach(text => {
                 const p = document.createElement('p');
                 p.textContent = text;
@@ -180,36 +127,47 @@ async function loadArtProjects() {
         }
 
         // Languages
-        if (project.languages) {
+        if (project.languages)
+        {
             const lang = document.createElement('p');
             lang.innerHTML = `<strong>Tech:</strong> ${project.languages.join(', ')}`;
             section.appendChild(lang);
         }
 
         // Image (if exists)
-        if (project.images) {
+        if (project.images)
+        {
+            const imgEntry = document.createElement('div');
+            imgEntry.classList.add('img-entry');
+
+            const imgLabel = document.createElement('p');
+            imgLabel.classList.add('img-label');
+            imgLabel.textContent = `[${project.images}]`;
+            imgEntry.appendChild(imgLabel);
             const link = document.createElement('a');
             link.href = project.source;
             link.target = "_blank";
 
             const img = document.createElement('img');
             img.src = `./resources/images/${project.images}/main.png`;
-            img.style.width = "100%";
-            img.style.maxWidth = "800px";
 
             link.appendChild(img);
-            section.appendChild(link);
+            imgEntry.appendChild(link);
+            section.appendChild(imgEntry);
         }
-
-        // Source link
-        const source = document.createElement('a');
-        source.href = project.source;
-        source.target = "_blank";
-        source.textContent = ">> launch.exe";
-        section.appendChild(source);
+        else
+        {
+            // Source link
+            const source = document.createElement('a');
+            source.href = project.source;
+            source.target = "_blank";
+            source.textContent = ">> launch.exe";
+            section.appendChild(source);
+        }
 
         container.appendChild(section);
     });
 }
 
+loadProjects();
 loadArtProjects();

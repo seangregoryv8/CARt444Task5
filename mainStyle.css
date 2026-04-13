@@ -1,4 +1,5 @@
-:root {
+:root
+{
     --color-primary: #11226e;
     --color-background: #0D0D0F;
     --color-text: #c0c0c1;
@@ -6,6 +7,9 @@
     --color-accent: #a01441;
     --color-secondary: #24382c;
     --color-text-muted: #797979;
+    --color-button: rgba(17, 34, 110, 0.85);
+    --color-button-soft: rgba(0, 0, 0, 0.28);
+    --color-glow: rgba(160, 20, 65, 0.22);
 
     --space-1: 4px;
     --space-2: 8px;
@@ -45,6 +49,8 @@
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 14px;
+    --radius-xl: 20px;
+    --radius-head: 55px;
     --radius-pill: 999px;
 
     --panel-bg: rgba(0, 0, 0, 0.22);
@@ -67,11 +73,6 @@ body
     align-items: start;
 }
 
-body *
-{
-    padding: 0 5px;
-}
-
 .sideBar
 {
     position: sticky;
@@ -87,8 +88,8 @@ body *
 {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 18px;
+    gap: var(--space-3);
+    padding: var(--space-4);
 }
 
 .checklist a
@@ -105,9 +106,8 @@ body *
 
 .mainContent
 {
-    padding: 50px;
+    padding: var(--space-7);
     color: var(--color-text);
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -118,11 +118,14 @@ h1, h2, h4
     color: var(--color-primary);
 }
 
+h1 { letter-spacing: 0.08em;}
+h2 { opacity: 0.9; }
+p { opacity: 0.85; }
+
 p
 {
     font-family: var(--font-mono);
     color: var(--color-text);
-    max-width: 780px;
     line-height: var(--lh-body);
     font-size: var(--text-body);
 }
@@ -136,13 +139,13 @@ a
 h1
 {
     font-size: var(--text-display);
-    margin-top: 50px;
+    margin-top: var(--space-6);
 }
 
 h2
 {
     font-size: var(--text-headline);
-    margin-top: 50px;
+    margin-top: var(--space-5);
 }
 
 h4
@@ -157,13 +160,56 @@ span
     color: var(--color-text-muted);
 }
 
+form
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+}
+
+label, input
+{
+    padding: var(--space-2);
+    text-align: center;
+}
+
+section
+{
+    max-width: 70%;
+    margin-bottom: var(--radius-xl);
+    background: var(--panel-bg);
+    border: 1px solid var(--color-text-muted);
+    padding: var(--space-4);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+section:hover
+{
+    transform: translateY(-2px);
+    border-color: var(--color-accent)
+}
+
+input, textarea
+{
+    border: 1px solid rgba(121, 121, 121, 0.55);
+    background: var(--color-primary);
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: var(--text-body);
+}
+
+textarea
+{
+    resize: vertical;
+    min-height: 120px;
+}
 pre
 {
     width: min(100%, 980px);
-    margin-top: 18px;
+    margin-top: var(--space-4);
     border: 1px solid rgba(121, 121, 121, 0.55);
     background: var(--panel-bg);
-    padding: 14px 16px;
+    padding: var(--space-4);
     overflow: auto;
 }
 
@@ -172,8 +218,8 @@ pre code
     display: block;
     white-space: pre;
     font-family: var(--font-mono);
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: var(--text-label);
+    line-height: var(--lh-body);
     color: var(--color-text);
 }
 
@@ -181,8 +227,7 @@ pre code
 {
     display: flex;
     flex-direction: column;
-    gap: -10px;
-    margin: 20px;
+    margin: var(--radius-lg);
     text-decoration: none;
 }
 a p
@@ -192,7 +237,7 @@ a p
 }
 button
 {
-    padding: 20px;
+    padding: var(--space-4);
 }
 /* VHS Font */
 @font-face
@@ -260,8 +305,8 @@ button
 
 .icon
 {
-    width: 32px;
-    height: 32px;
+    width: var(--space-5);
+    height: var(--space-5);
     background-image: url('media.png');
     background-size: 128px 160px;
     background-position: calc(var(--x) * -32px) calc(var(--y) * -32px);
@@ -277,1119 +322,212 @@ button
     --color-link: #3a3a3a;
     --color-text-muted: #1d0f0f;
     --color-secondary: #64a07c;
+    --color-button: rgba(17, 34, 110, 0.85);
 }
 
-.lightDarkToggle
+.lightDarkToggle, .effectsToggle
 {
+    cursor: pointer;
     position: fixed;
-    top: 30px;
-    right: 30px;
+    top: var(--space-5);
     scale: 3;
-    z-index: 30;
-    padding: 0;
 }
+.lightDarkToggle { right: 30px; }
+.effectsToggle { right: 150px; }
 
-.effectsToggle
+.inlineIcon
 {
-    position: fixed;
-    top: 30px;
-    right: 150px;
+    position: relative;
+    margin: var(--radius-head);
     scale: 3;
-    z-index: 30;
-    padding: 0;
+}
+.button-primary {
+    --btn-bg: var(--color-button);
+    --btn-border: var(--color-button);
 }
 
-/* Tables (system-wide) */
-table
-{
-    width: min(100%, 980px);
-    margin-top: 18px;
-    padding: 0;
-    border-collapse: collapse;
-    border: 1px solid var(--color-text-muted);
-    background: var(--panel-bg-soft);
+.button-accent {
+    --btn-bg: var(--color-accent);
+    --btn-border: var(--color-accent);
 }
 
-thead th
+button
 {
-    font-family: var(--font-mono-semibold);
-    text-transform: lowercase;
-    letter-spacing: 0.05em;
-    color: var(--color-primary);
-    background: rgba(17, 34, 110, 0.14);
-    border-bottom: 1px solid var(--color-text-muted);
-}
-
-.iconName
-{
-    color: var(--color-link);
-    
-}
-
-th, td
-{
-    padding: 10px 12px;
-    text-align: left;
-    vertical-align: top;
-    font-family: var(--font-mono);
+    appearance: none;
+    cursor: pointer;
+    border: 1px solid var(--btn-border, var(--color-button));
+    background: linear-gradient(
+        180deg,
+        var(--btn-bg, var(--color-button)),
+        var(--color-button-soft)
+    );
     color: var(--color-text);
-}
-
-tbody td
-{
-    border-bottom: 1px solid rgba(121, 121, 121, 0.35);
-}
-
-tbody tr:nth-child(even)
-{
-    background: rgba(255, 255, 255, 0.03);
-}
-
-tbody td:first-child
-{
-    font-family: var(--font-mono-semibold);
-    color: var(--color-text);
-    white-space: nowrap;
-}
-
-/* Grid demo panel (used on types/grid.html) */
-.demoPanel
-{
-    width: min(100%, 980px);
-    margin-top: 22px;
-    border: 1px solid var(--color-text-muted);
-    background: var(--panel-bg);
-    padding: 14px 14px 12px;
-}
-
-.demoPanel *
-{
-    padding: 0;
-}
-
-.demoPanelHeader
-{
-    display: flex;
-    gap: 14px;
-    align-items: baseline;
-    justify-content: space-between;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed rgba(121, 121, 121, 0.55);
-    margin-bottom: 12px;
-}
-
-.demoPanelTitle
-{
     font-family: var(--font-mono-bold);
-    color: var(--color-accent);
-}
-
-.demoPanelMeta
-{
-    font-family: var(--font-mono);
-    color: var(--color-text-muted);
-    font-size: 14px;
-    text-align: right;
-}
-
-.diagramWrap
-{
-    overflow-x: auto;
-    border: 1px solid rgba(121, 121, 121, 0.35);
-    background: var(--panel-bg-blue);
-}
-
-.gridDiagram
-{
-    display: block;
-    width: 100%;
-    height: auto;
-    min-width: 760px;
-}
-
-.demoPanelCaption
-{
-    margin-top: 12px;
-    font-family: var(--font-mono);
-    color: var(--color-text);
-    font-size: 16px;
-    line-height: 1.5;
-    max-width: none;
-}
-
-.gridDiagram .gridStroke
-{
-    fill: var(--color-text-muted);
-}
-
-.gridDiagram .gridFrame
-{
-    fill: transparent;
-    stroke: rgba(121, 121, 121, 0.75);
-    stroke-width: 2;
-}
-
-.gridDiagram .gridContentArea
-{
-    fill: rgba(17, 34, 110, 0.10);
-    stroke: rgba(17, 34, 110, 0.7);
-    stroke-width: 2;
-}
-
-.gridDiagram .gridSafeArea
-{
-    fill: rgba(160, 20, 65, 0.08);
-    stroke: rgba(160, 20, 65, 0.8);
-    stroke-width: 2;
-    stroke-dasharray: 8 6;
-}
-
-.gridDiagram .gridColumns rect
-{
-    fill: rgba(192, 192, 193, 0.06);
-    stroke: rgba(121, 121, 121, 0.35);
-    stroke-width: 1;
-}
-
-.gridDiagram .gridModules rect
-{
-    fill: rgba(160, 20, 65, 0.22);
-    stroke: rgba(160, 20, 65, 0.85);
-    stroke-width: 2;
-}
-
-.gridDiagram .gridDimLine
-{
-    stroke: rgba(121, 121, 121, 0.9);
-    stroke-width: 2;
-}
-
-.gridDiagram .gridLabel
-{
-    fill: var(--color-text);
-    font-family: IBMRegular, monospace;
-    font-size: 16px;
-}
-
-.gridDiagram .gridLabelMuted
-{
-    fill: rgba(121, 121, 121, 0.95);
-}
-
-/* Breakpoints diagram (used on types/breakpoints.html) */
-.breakpointDiagram
-{
-    display: block;
-    width: 100%;
-    height: auto;
-    min-width: 760px;
-}
-
-.breakpointDiagram .bpFrame
-{
-    fill: transparent;
-    stroke: rgba(121, 121, 121, 0.75);
-    stroke-width: 2;
-}
-
-.breakpointDiagram .bpRowRect
-{
-    fill: rgba(0, 0, 0, 0.16);
-    stroke: rgba(121, 121, 121, 0.35);
-    stroke-width: 1;
-}
-
-.breakpointDiagram .bpTitle
-{
-    fill: var(--color-primary);
-    font-family: IBMSemiBold, monospace;
-    font-size: 18px;
+    text-transform: lowercase;
     letter-spacing: 0.06em;
-    text-transform: lowercase;
-}
-
-.breakpointDiagram .bpLegend
-{
-    fill: var(--color-text-muted);
-    font-family: IBMRegular, monospace;
-    font-size: 14px;
-}
-
-.breakpointDiagram .bpName
-{
-    fill: var(--color-link);
-    font-family: IBMSemiBold, monospace;
-    font-size: 16px;
-    letter-spacing: 0.04em;
-}
-
-.breakpointDiagram .bpMeta
-{
-    fill: var(--color-text);
-    font-family: IBMRegular, monospace;
-    font-size: 16px;
-}
-
-/* Breakpoint ruler (used on types/breakpoints.html) */
-.breakpointWrap
-{
-    padding: 14px;
-}
-
-.breakpointsRuler
-{
-    position: relative;
-    height: 34px;
-    border-bottom: 1px dashed rgba(121, 121, 121, 0.55);
-}
-
-.bpMarker
-{
-    position: absolute;
-    bottom: 0;
-    transform: translateX(-50%);
-}
-
-.bpMarker::after
-{
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -14px;
-    width: 1px;
-    height: 14px;
-    background: rgba(160, 20, 65, 0.85);
-    transform: translateX(-50%);
-}
-
-.bp0 { left: 0%; transform: none; }
-.bp0::after { left: 0; transform: none; }
-.bp600 { left: 24.25%; }
-.bp768 { left: 35.1%; }
-.bp1024 { left: 46.7%; }
-.bp1280 { left: 58.3%; }
-.bp1440 { left: 69.2%; }
-.bp1920 { left: 89%; }
-.bp1920more { left: 100%; }
-
-.bp1920more { transform: translateX(-100%); }
-.bp1920more::after { left: 100%; transform: translateX(-100%); }
-
-.bpTag
-{
-    display: inline-block;
-    font-family: IBMRegular, monospace;
-    font-size: 12px;
-    color: var(--color-text);
-    background: rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(121, 121, 121, 0.45);
-    padding: 3px 6px;
-    border-radius: 4px;
-    letter-spacing: 0.06em;
-}
-
-.breakpointBand
-{
-    display: flex;
-    margin-top: 14px;
-    border: 1px solid rgba(121, 121, 121, 0.35);
-    background: rgba(0, 0, 0, 0.12);
-}
-
-.bpSegment
-{
-    padding: 10px 10px 12px;
-    border-right: 1px solid rgba(121, 121, 121, 0.25);
-    min-width: 100px;
-}
-
-.bpSegment:last-child
-{
-    border-right: none;
-}
-
-.bpMobile { flex: 600; background: rgba(160, 20, 65, 0.08); }
-.bpMobileH { flex: 168; background: rgba(17, 34, 110, 0.08); }
-.bpTablet { flex: 256; background: rgba(160, 20, 65, 0.06); }
-.bpTabletH { flex: 256; background: rgba(17, 34, 110, 0.06); }
-.bpCrt { flex: 160; background: rgba(160, 20, 65, 0.05); }
-.bpDesktop { flex: 480; background: rgba(17, 34, 110, 0.05); }
-.bpWide { flex: 240; background: rgba(160, 20, 65, 0.04); }
-
-.bpSegment .bpName
-{
-    font-family: IBMSemiBold, monospace;
-    font-size: 14px;
-    letter-spacing: 0.06em;
-    text-transform: lowercase;
-    color: var(--color-link);
-    max-width: none;
-    margin-bottom: 6px;
-}
-
-.bpSegment .bpMeta
-{
-    font-family: IBMRegular, monospace;
-    font-size: 12px;
-    line-height: 1.4;
-    letter-spacing: 0.04em;
-    color: var(--color-text);
-    max-width: none;
-}
-
-.contentClampRow
-{
-    margin-top: 14px;
-    display: grid;
-    gap: 10px;
-}
-
-.clampLabel
-{
-    font-family: IBMRegular, monospace;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    color: var(--color-text-muted);
-    text-transform: lowercase;
-}
-
-.clampBars
-{
-    display: flex;
-    gap: 10px;
-    align-items: stretch;
-}
-
-.clampBar
-{
-    position: relative;
-    border: 1px solid rgba(121, 121, 121, 0.35);
-    background: rgba(0, 0, 0, 0.22);
-    padding: 10px;
-    min-height: 38px;
-}
-
-.clampMin { flex: 272; }
-.clampMax { flex: 1200; }
-
-.clampBar span
-{
-    font-family: IBMRegular, monospace;
-    font-size: 12px;
-    color: var(--color-text);
-    letter-spacing: 0.04em;
-}
-
-/* Layers demo (used on types/layers.html) */
-.layerDemoStage
-{
-    position: relative;
-    padding: 16px;
-    height: 280px;
-    min-width: 760px;
-}
-
-.layerSurface
-{
-    position: absolute;
-    border: 1px solid rgba(121, 121, 121, 0.55);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.layerBase
-{
-    inset: 16px;
-    background:
-        linear-gradient(180deg, rgba(17, 34, 110, 0.10), rgba(0, 0, 0, 0.12)),
-        radial-gradient(circle at 20% 30%, rgba(160, 20, 65, 0.10), transparent 55%);
-    z-index: var(--layer-base);
-}
-
-.layerContent
-{
-    left: 46px;
-    top: 46px;
-    width: 64%;
-    height: 56%;
-    background: rgba(0, 0, 0, 0.26);
-    border-color: rgba(17, 34, 110, 0.75);
-    z-index: var(--layer-content);
-    padding: 14px;
-}
-
-.layerElevated
-{
-    right: 68px;
-    top: 84px;
-    width: 30%;
-    height: 44%;
-    background: rgba(0, 0, 0, 0.34);
-    border-color: rgba(160, 20, 65, 0.75);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
-    z-index: var(--layer-elevated);
-    padding: 14px;
-}
-
-.layerOverlay
-{
-    left: 34%;
-    top: 34%;
-    width: 46%;
-    height: 46%;
-    background: rgba(0, 0, 0, 0.55);
-    border-color: rgba(192, 192, 193, 0.55);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(2px);
-    z-index: var(--layer-overlay);
-    padding: 14px;
-}
-
-.layerStamp
-{
-    font-family: IBMSemiBold, monospace;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: lowercase;
-    color: var(--color-link);
-    max-width: none;
-    margin-bottom: 10px;
-}
-
-.layerNote
-{
-    font-family: IBMRegular, monospace;
-    font-size: 14px;
-    color: var(--color-text);
-    max-width: none;
-    margin-top: 6px;
-}
-
-.layerLine
-{
-    height: 8px;
-    border: 1px solid rgba(121, 121, 121, 0.35);
-    background: rgba(255, 255, 255, 0.04);
-    margin-top: 12px;
-}
-
-.layerLineShort
-{
-    width: 72%;
-}
-
-.layerActions
-{
-    margin-top: 14px;
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
-
-.layerBtn
-{
-    font-family: IBMRegular, monospace;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: lowercase;
-    color: var(--color-text);
-    border: 1px solid rgba(121, 121, 121, 0.55);
-    background: rgba(0, 0, 0, 0.35);
-    padding: 6px 10px;
-    border-radius: 6px;
-}
-
-.layerBtnPrimary
-{
-    border-color: rgba(160, 20, 65, 0.85);
-    background: rgba(160, 20, 65, 0.18);
-}
-
-.layerLegend
-{
-    position: absolute;
-    left: 16px;
-    bottom: 16px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    z-index: calc(var(--layer-overlay) + 1);
-}
-
-.layerChip
-{
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--color-text);
-    background: rgba(0, 0, 0, 0.45);
-    border: 1px dashed rgba(121, 121, 121, 0.55);
-    padding: 4px 8px;
-    border-radius: var(--radius-pill);
-    letter-spacing: 0.04em;
-    max-width: none;
-}
-
-/* Color palette (used on types/color.html) */
-.colorSwatch
-{
-    display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: 12px;
-    align-items: center;
-    padding: 12px;
-    border: 1px solid rgba(121, 121, 121, 0.35);
-    background: var(--panel-bg-soft);
-}
-
-.swatchChip
-{
-    width: 56px;
-    height: 56px;
-    border-radius: var(--radius-md);
-    background: var(--swatch);
-    border: 1px solid rgba(192, 192, 193, 0.35);
-    box-shadow:
-        0 0 0 1px rgba(0, 0, 0, 0.35) inset,
-        0 14px 28px rgba(0, 0, 0, 0.35);
-}
-
-.swatchHex
-{
-    font-family: var(--font-mono-semibold);
-    font-size: 14px;
-    letter-spacing: 0.06em;
-    color: var(--color-text);
-    max-width: none;
-}
-
-.swatchUse
-{
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--color-text-muted);
-    max-width: none;
-    margin-top: 6px;
-}
-
-.comboGrid
-{
-    width: min(100%, 980px);
-    margin-top: 18px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-}
-
-@media (max-width: 980px)
-{
-    .comboGrid
-    {
-        grid-template-columns: 1fr;
-    }
-}
-
-.comboCard
-{
-    border: 1px solid rgba(121, 121, 121, 0.55);
-    background: var(--combo-bg);
-    color: var(--combo-fg);
-    padding: 14px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset;
-}
-
-.comboCard *
-{
-    padding: 0;
-}
-
-.comboTitle
-{
-    font-family: IBMSemiBold, monospace;
-    letter-spacing: 0.08em;
-    text-transform: lowercase;
-    color: var(--combo-accent);
-    max-width: none;
-}
-
-.comboBody
-{
-    font-family: IBMRegular, monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-top: 10px;
-    max-width: none;
-    color: var(--combo-fg);
-}
-
-.comboMeta
-{
-    margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 14px;
-    font-family: IBMRegular, monospace;
-    font-size: 12px;
-    color: rgba(192, 192, 193, 0.85);
-    border-top: 1px dashed rgba(121, 121, 121, 0.55);
-    padding-top: 10px;
-}
-
-.comboCard[style*=\"--combo-bg: #ffffff\"] .comboMeta
-{
-    color: rgba(13, 13, 15, 0.75);
-}
-
-/* Ratios (used on types/ratios.html) */
-.ratioGrid
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-}
-
-@media (max-width: 980px)
-{
-    .ratioGrid
-    {
-        grid-template-columns: 1fr;
-    }
-}
-
-.ratioCard *
-{
-    padding: 0;
-}
-
-.ratioFrame
-{
-    position: relative;
-    aspect-ratio: var(--ratio);
-    border: 1px solid rgba(121, 121, 121, 0.55);
-    background:
-        linear-gradient(180deg, rgba(17, 34, 110, 0.10), rgba(0, 0, 0, 0.18)),
-        radial-gradient(circle at 30% 30%, rgba(160, 20, 65, 0.12), transparent 55%);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.ratioSafe
-{
-    position: absolute;
-    inset: 10%;
-    border: 2px dashed rgba(160, 20, 65, 0.75);
-    border-radius: 8px;
-    opacity: 0.9;
-}
-
-.ratioCross::before,
-.ratioCross::after
-{
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 70%;
-    height: 1px;
-    background: rgba(192, 192, 193, 0.35);
-    transform: translate(-50%, -50%);
-}
-
-.ratioCross::after
-{
-    width: 1px;
-    height: 70%;
-}
-
-.ratioStamp
-{
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    font-family: IBMSemiBold, monospace;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: lowercase;
-    color: var(--color-link);
-    background: rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(121, 121, 121, 0.45);
-    padding: 4px 8px;
-    border-radius: 6px;
-    max-width: none;
-}
-
-.ratioNote
-{
-    margin-top: 10px;
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--color-text-muted);
-    letter-spacing: 0.04em;
-    text-transform: lowercase;
-    max-width: none;
-}
-
-/* Icons (used on types/icons.html) */
-.iconLibraryGrid
-{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    padding: 12px;
-}
-
-@media (max-width: 980px)
-{
-    .iconLibraryGrid
-    {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.iconTile
-{
-    border: 1px solid rgba(121, 121, 121, 0.35);
-    background: var(--panel-bg-soft);
-    padding: 12px;
-    display: grid;
-    gap: 8px;
-    justify-items: start;
-}
-
-.iconTile *
-{
-    padding: 0;
-}
-
-.iconSample
-{
-    transform: scale(2);
-    transform-origin: top left;
-    margin-bottom: 18px;
-}
-
-.iconName
-{
-    font-family: var(--font-mono-semibold);
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: lowercase;
-    color: var(--color-link);
-    max-width: none;
-    padding-top: 10px;
-}
-
-.iconCoords
-{
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--color-text-muted);
-    max-width: none;
-}
-
-.iconInline
-{
-    transform: none;
-}
-
-.iconExampleRow
-{
-    padding: 12px 0 0;
-}
-
-.iconExampleRow *
-{
-    padding: 0;
-}
-
-.iconExampleNote
-{
-    margin-top: 12px;
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--color-text-muted);
-    max-width: none;
-}
-
-.iconButton
-{
-    appearance: none;
-    cursor: pointer;
-    border: 1px solid rgba(121, 121, 121, 0.75);
-    background: rgba(0, 0, 0, 0.28);
-    border-radius: 8px;
-    padding: 10px;
+    padding: var(--space-2) var(--space-3);
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 0 1px rgba(17, 34, 110, 0.15) inset;
-    margin-right: 10px;
-}
-
-.iconButton:hover
-{
-    border-color: rgba(160, 20, 65, 0.85);
-}
-
-.iconButton:focus-visible
-{
-    outline: 2px solid rgba(160, 20, 65, 0.95);
-    outline-offset: 2px;
-}
-
-/* Spacing demos (used on types/spacing.html) */
-.demoRow
-{
-    width: min(100%, 980px);
-    margin-top: 22px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-@media (max-width: 980px)
-{
-    .demoRow
-    {
-        grid-template-columns: 1fr;
-    }
-}
-
-.spacingScaleGrid
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.spacingSwatch
-{
-    border: 1px solid rgba(121, 121, 121, 0.45);
-    background: rgba(0, 0, 0, 0.20);
-    padding: 10px 10px 12px;
-}
-
-.spacingLabel
-{
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    max-width: none;
-    font-size: 14px;
-    letter-spacing: 0.06em;
-    text-transform: lowercase;
-    color: var(--color-text-muted);
-    margin-bottom: 10px;
-}
-
-.spacingLabel span
-{
-    font-size: 12px;
-    color: var(--color-text);
-}
-
-.spacingBar
-{
-    height: 18px;
-    width: min(100%, calc(var(--space) * 4));
-    border: 1px solid rgba(160, 20, 65, 0.85);
-    background: rgba(160, 20, 65, 0.22);
-    box-shadow: 0 0 0 1px rgba(17, 34, 110, 0.25) inset;
-}
-
-.componentShowcase *
-{
-    padding: 0;
-}
-
-.componentStage
-{
-    position: relative;
-    border: 1px solid rgba(121, 121, 121, 0.35);
-    background: rgba(17, 34, 110, 0.06);
-    padding: 20px;
-    min-height: 140px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dsButton
-{
-    appearance: none;
-    cursor: pointer;
-    border: 1px solid rgba(17, 34, 110, 0.85);
-    background: linear-gradient(180deg, rgba(17, 34, 110, 0.14), rgba(0, 0, 0, 0.28));
-    color: var(--color-text);
-    font-family: IBMSemiBold, monospace;
-    text-transform: lowercase;
-    letter-spacing: 0.06em;
-    padding: 10px 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border-radius: 6px;
+    gap: var(--space-3);
+    border-radius: var(--radius-sm);
     box-shadow:
-        0 0 0 1px rgba(160, 20, 65, 0.22) inset,
-        0 10px 28px rgba(0, 0, 0, 0.28);
-    transition: border-color 120ms ease, background 120ms ease, transform 120ms ease;
+        0 0 0 1px var(--color-glow) inset,
+        0 10px 28px var(--color-button-soft);
+    transition: all 120ms ease;
 }
 
-.dsButton:hover
+button:hover
 {
-    border-color: rgba(160, 20, 65, 0.85);
-    background: linear-gradient(180deg, rgba(160, 20, 65, 0.12), rgba(0, 0, 0, 0.28));
+    border-color: var(--color-accent);
+    background: linear-gradient(180deg, var(--color-accent), var(--color-button-soft));
 }
-
-.dsButton:active
+button:active
 {
     transform: translateY(1px);
 }
 
-.dsButton:focus-visible
+button:focus-visible
 {
-    outline: 2px solid rgba(160, 20, 65, 0.95);
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
-.light-mode .dsButton
+.light-mode {
+    --color-primary: rgba(17, 34, 110, 0.10);
+    --color-accent: rgba(160, 20, 65, 0.10);
+    --color-white: rgba(255, 255, 255, 0.75);
+    --color-button-soft: rgba(0, 0, 0, 0.12);
+    --color-glow: rgba(160, 20, 65, 0.18);
+}
+
+.light-mode button
 {
-    background: linear-gradient(180deg, rgba(17, 34, 110, 0.10), rgba(255, 255, 255, 0.75));
+    background: linear-gradient(180deg, var(--color-primary), var(--color-white));
     box-shadow:
-        0 0 0 1px rgba(160, 20, 65, 0.18) inset,
-        0 10px 28px rgba(0, 0, 0, 0.12);
+        0 0 0 1px var(--color-glow) inset,
+        0 10px 28px var(--color-button-soft);
 }
 
-.light-mode .dsButton:hover
+.light-mode button:hover
 {
-    background: linear-gradient(180deg, rgba(160, 20, 65, 0.10), rgba(255, 255, 255, 0.75));
-}
-
-.dsButtonIcon
-{
-    width: 14px;
-    height: 14px;
-    border: 1px solid rgba(17, 34, 110, 0.9);
-    background: rgba(17, 34, 110, 0.25);
-}
-
-.dsButtonKbd
-{
-    font-family: IBMRegular, monospace;
-    color: var(--color-text-muted);
-    border: 1px dashed rgba(121, 121, 121, 0.65);
-    padding: 2px 6px;
-    border-radius: 4px;
-    letter-spacing: 0.02em;
-}
-
-.padGuide
-{
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border: 1px dashed rgba(160, 20, 65, 0.35);
-    opacity: 0.85;
-}
-
-.padGuideX
-{
-    left: 16px;
-    right: 16px;
-    top: 0;
-    bottom: 0;
-    border-left: 1px dashed rgba(160, 20, 65, 0.55);
-    border-right: 1px dashed rgba(160, 20, 65, 0.55);
-    border-top: none;
-    border-bottom: none;
-}
-
-.padGuideY
-{
-    top: 10px;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    border-top: 1px dashed rgba(160, 20, 65, 0.55);
-    border-bottom: 1px dashed rgba(160, 20, 65, 0.55);
-    border-left: none;
-    border-right: none;
-}
-
-.measure
-{
-    position: absolute;
-    font-family: IBMRegular, monospace;
-    font-size: 12px;
-    color: var(--color-text);
-    background: rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(121, 121, 121, 0.45);
-    padding: 4px 6px;
-    text-transform: lowercase;
-    letter-spacing: 0.06em;
-    white-space: nowrap;
-}
-
-.dsButtonText
-{
-    color: var(--color-text);
-    font-size: 14px;
-    font-weight: 800;
-}
-
-.measureTop
-{
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.measureLeft
-{
-    left: 6px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-90deg);
-    transform-origin: left top;
-}
-
-.measureGap
-{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 34px);
-}
-
-.componentNote
-{
-    margin-top: 12px;
-    font-size: 16px;
-    max-width: none;
-    color: var(--color-text);
+    background: linear-gradient(180deg, var(--color-accent), var(--color-white));
 }
 
 pre
 {
     background-color: var(--color-accent);
-    border-radius: 10px;
+    border-radius: var(--radius-md);
 }
-.img-entry {
-    border: 1px solid #000;
-    padding: 8px;
+.img-entry
+{
+    max-width: 85%;
+    border: 1px solid var(--color-background);
+    padding: var(--space-3);
     display: inline-block;
     background: var(--color-primary);
 }
 
-.img-label {
-    font-size: 12px;
-    margin-bottom: 4px;
+.img-label
+{
+    font-size: var(--text-label);
+    margin-bottom: var(--radius-sm)
 }
 
-.img-entry img {
-    max-width: 800px;
+.img-entry img
+{
+    max-width: 100%;
     image-rendering: pixelated;
     filter: contrast(150%) brightness(90%);
 }
-.img-entry img:hover {
+.img-entry img:hover
+{
     filter: invert(100%) contrast(200%);
+}
+
+.blackLoadingBox
+{
+    position: fixed;
+    left: 15%;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    opacity: 1;
+    z-index: var(--layer-overlay);
+    pointer-events: none;
+    transition: opacity 220ms ease;
+}
+
+@media (max-width: 600px)
+{
+    .blackLoadingBox
+    {
+        left: 0;
+        width: 100%;
+    }
+    body
+    {
+        grid-template-columns: auto;
+    }
+
+    .sideBar
+    {
+        height: auto;
+        width: 100%;
+        z-index: var(--layer-elevated);
+    }
+
+    .indexTitle
+    {
+        position: absolute;
+        top: -100px;
+    }
+
+    .inlineIcon
+    {
+        scale: 1.5;
+        margin: var(--radius-md);
+    }
+
+    .effectsToggle, .lightDarkToggle
+    {
+        z-index: var(--layer-elevated);
+        scale: 1;
+        top: var(--space-1);
+    }
+    .effectsToggle { right: 120px; }
+    .lightDarkToggle { right: 60px; }
+
+    .checklist
+    {        
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        gap: var(--space-1);
+        padding: var(--space-2);
+    }
+    .checklist > :nth-child(1) { grid-column: 1; grid-row: 1; }
+    .checklist > :nth-child(2) { grid-column: 1; grid-row: 2; }
+    .checklist > :nth-child(3) { grid-column: 1; grid-row: 3; }
+    .checklist > :nth-child(4) { grid-column: 1; grid-row: 4; }
+    .checklist > :nth-child(5) { grid-column: 2; grid-row: 1; }
+    .checklist > :nth-child(6) { grid-column: 2; grid-row: 2; }
+    .checklist > :nth-child(7) { grid-column: 2; grid-row: 3; }
+ 
+    .mainContent
+    {
+        padding: 0;
+    }
+
+    section {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: calc(var(--text-display) * 0.4);
+        margin-top: var(--space-3);
+     }
+    h2 { font-size: calc(var(--text-headline) * 0.6); margin-top: var(--space-2); }
+    h4 { font-size: calc(var(--text-category) * 0.7); }
+    p { font-size: calc(var(--text-body) * 0.6); }
 }

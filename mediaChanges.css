@@ -1,0 +1,156 @@
+/* Mobile */
+@media (max-width: 600px)
+{
+    p
+    {
+        font-size: 10px;
+        max-width: 300px;
+    }
+    .mainContent
+    {
+        display: block;
+    }
+    section
+    {
+        border-bottom: 1px solid var(--color-text-muted);
+        padding-bottom: 20px;
+    }
+
+}
+
+/* Mobile Landscape */
+@media (max-height: 768px) and (orientation: landscape)
+{
+    p
+    {
+        font-size: 12px;
+        max-width: 320px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 768px)
+{
+    p
+    {
+        max-width: 320px;
+    }
+    section
+    {
+        margin-bottom: 40px;
+    }
+}
+
+/* Tablet Landscape */
+@media (min-width: 769px) and (max-width: 1024px)
+{
+    body
+    {
+        display: grid;
+        grid-template-columns: 15% auto;
+    }
+    
+    .sideBar {
+        position: sticky;
+        top: 0;
+        width: 100vh;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 10px 16px;
+
+        border-bottom: 1px solid var(--color-text-muted);
+    }
+    
+    .sideBar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.03) 2px,
+            transparent 2px,
+            transparent 4px
+        );
+    }
+    
+    .checklist {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 20px;
+
+        padding: 10px 0;
+    }
+
+    .checklist a {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .checklist p {
+        display: none; /* kill subtitles on small screens */
+    }
+    p
+    {
+        font-size: 14px;
+    }
+    
+    .mainContent {
+        grid-column: 1;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    section {
+        padding: 20px;
+        background: var(--panel-bg);
+    }
+}
+
+/* CRT */
+@media (min-width: 1025px) and (max-width: 1280px)
+{
+    p
+    {
+        font-size: 16px;
+        max-width: 580px;
+    }
+    body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.03) 2px,
+            transparent 2px,
+            transparent 4px
+        );
+        pointer-events: none;
+    }
+
+    h1, h2 {
+        text-shadow: 2px 0 red, -2px 0 blue;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1281px) and (max-width: 1440px)
+{
+    p
+    {
+        max-width: 680px;
+    }
+}
+
+/* Wide */
+@media (min-width: 1441px)
+{
+}

@@ -53,7 +53,7 @@ function setSidebar()
             a.setAttribute("aria-current", "page");
         }
     
-        a.innerHTML = `${text}<span>${spanText}</span>`;
+        a.innerHTML = `${text}<span>.${spanText}</span>`;
         nav.appendChild(a);
     }
 
@@ -62,6 +62,7 @@ function setSidebar()
     addParagraph("overview.all");
     addLink("index.html", "home", "brd");
     addLink("philosophy.html", "philosophy", "pla");
+    addLink("contact.html", "contact", "con");
 
     addBreak();
     addParagraph("projects (1).col");
