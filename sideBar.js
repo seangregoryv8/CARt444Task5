@@ -62,18 +62,11 @@ function setSidebar()
     addParagraph("overview.all");
     addLink("index.html", "home", "brd");
     addLink("philosophy.html", "philosophy", "pla");
-    addLink("projects.html", "projects", "wrk");
 
     addBreak();
-    addParagraph("foundation (1).col");
-    addLink("types/grid.html", "grid_system", "mnl");
-    addLink("types/spacing.html", "spacing_scale", "maa");
-    addLink("types/breakpoints.html", "breakpoints", "log");
-    addLink("types/layers.html", "layer_stack", "str");
-    addLink("types/color.html", "colour_palette", "sig");
-    addLink("types/typography.html", "typography_specimen", "typ");
-    addLink("types/ratios.html", "image_ratios", "fra");
-    addLink("types/icons.html", "icon_library", "sym");
+    addParagraph("projects (1).col");
+    addLink("projectsComp.html", "computers", "exe");
+    addLink("projectsArt.html", "art", "jpg");
 
     div.appendChild(nav);
     aside.appendChild(div);

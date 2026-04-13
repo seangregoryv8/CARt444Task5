@@ -1,0 +1,124 @@
+{
+    "dance_with_me":
+    {
+        "type": "film",
+        "images": "dance",
+        "description": 
+        {
+            "en":
+            [
+                "Made in half a year, this short movie tells the tale of a scientist in the wrong place at the wrong time.",
+                "Using a mix of animation and live action, clever sound design, experimental editing practices, and gripping analog horror elements, you're sure not to sleep tonight after watching."
+            ],
+            "fr":
+            [
+                "Réalisé en six mois, ce court métrage raconte l'histoire d'un scientifique qui se trouve au mauvais endroit au mauvais moment.",
+                "Grâce à un mélange d'animation et de prises de vue réelles, à une conception sonore intelligente, à des pratiques de montage expérimentales et à des éléments d'horreur analogiques saisissants, il est certain que vous ne dormirez pas ce soir après l'avoir regardé."
+            ]
+        },
+        "source": "https://www.youtube.com/watch?v=SeM4JTgRFSA",
+        "length": 626
+    },
+    "detracted_minds":
+    {
+        "type": "film",
+        "images": "detracted",
+        "description": 
+        {
+            "en":
+            [
+                "This film, dealing with addiction and a theatrical look into ADHD, this short movie was my first journey into cinematography.",
+                "Directed, edited, and starring myself, it stands tall in sound design, and starts my journey into the artistic side."
+            ],
+            "fr":
+            [
+                "Ce film, qui traite de la dépendance et d'un regard théâtral sur le TDAH, ce court métrage a été mon premier voyage dans la cinématographie.",
+                "Réalisé, monté et interprété par moi-même, il se distingue par sa conception sonore et marque le début de mon parcours artistique."
+            ]
+        },
+        "source": "https://www.youtube.com/watch?v=D-LhSjYk6OQ",
+        "length": 413
+    },
+    "twenty_four_hours":
+    {
+        "type": "film",
+        "images": "twentyfour",
+        "description": 
+        {
+            "en":
+            [
+                "[24 Hours] is a short film I made as an experimental departure from my usual style.",
+                "It tells the story of a young woman putting down the hyper-stimulation of the world around her, spending 24 hours without her phone and the noise around her.",
+                "A more atmospheric film, using minimalist, elongated shots and a focus on sound design, it was a fun challenge, and I hope to do more in the future."
+            ],
+            "fr":
+            [
+                "[24 Heures] est un court métrage que j'ai réalisé pour m'éloigner de mon style habituel",
+                "Il raconte l'histoire d'une jeune femme qui met fin à l'hyper-stimulation du monde qui l'entoure, en passant 24 heures sans son téléphone et sans le bruit qui l'entoure",
+                "Un film plus atmosphérique, utilisant des plans minimalistes et allongés et mettant l'accent sur la conception sonore, c'était un défi amusant, et j'espère en faire d'autres à l'avenir."
+            ]
+        },
+        "source": "https://www.youtube.com/watch?v=Dm6AvWpE4CY",
+        "length": 614
+    },
+    "climates_graveyard":
+    {
+        "type": "film",
+        "images": "graveyard",
+        "description": 
+        {
+            "en":
+            [
+                "My first from-scratch animation, using ToonBoom, this project still stands as a warning against the dangers of the climate crisis.",
+                "Made in 2019, this was done at the same time as Detracted Minds, showing my jack-of-all-trades and creative reach."
+            ],
+            "fr":
+            [
+                "Ma première animation à partir de zéro, utilisant ToonBoom, ce projet reste un avertissement contre les dangers de la crise climatique.",
+                "Réalisé en 2019, il a été fait en même temps que Detracted Minds, montrant mon côté touche-à-tout et ma portée créative."
+            ]
+        },
+        "source": "https://www.youtube.com/watch?v=TddHRwtS9-0",
+        "length": 68
+    },
+    "panic_at_work":
+    {
+        "type": "film",
+        "images": "panic",
+        "description": 
+        {
+            "en":
+            [
+                "My longest film to date, this film was made in just shy of a month for a school project to demonstrate workplace conflict and resolution.",
+                "This was a challenge in patience and determination, as well as a blast to film with its sharp editing comparative to the likes of Edgar Wright."
+            ],
+            "fr":
+            [
+                "Mon film le plus long à ce jour, il a été réalisé en un peu moins d'un mois dans le cadre d'un projet scolaire visant à illustrer les conflits et la résolution des problèmes sur le lieu de travail.",
+                "C'était un défi de patience et de détermination, ainsi qu'un plaisir de filmer avec un montage pointu comparable à celui d'Edgar Wright."
+            ]
+        },
+        "source": "https://www.youtube.com/watch?v=ec7sxfQYLM8",
+        "length": 1438
+    },
+    "derivatives_in_one_minute":
+    {
+        "type": "film",
+        "images": "derivatives",
+        "description": 
+        {
+            "en":
+            [
+                "Made for a university math competition, I tried my hand at making a short & educational video to explain derivatives.",
+                "This was a lot of fun to make, and shows my style as a sharp and sophisticated style."
+            ],
+            "fr":
+            [
+                "Réalisé pour un concours universitaire de mathématiques, je me suis essayé à la réalisation d'une vidéo courte et éducative pour expliquer les produits dérivés.",
+                "C'était très amusant à faire, et cela montre mon style comme un style pointu et sophistiqué."
+            ]
+        },
+        "source": "https://www.youtube.com/watch?v=dMUK1vo1PuA",
+        "length": 61
+    }
+}

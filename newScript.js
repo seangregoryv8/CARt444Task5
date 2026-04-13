@@ -97,3 +97,119 @@ setTimeout(() =>
         setTimeout(() => { removeBlackLoadingBox() }, 500)
     }, 500);
 }, 500);
+
+async function loadProjects() {
+    const res = await fetch('./json/computer.json');
+    const data = await res.json();
+
+    const container = document.getElementById('projectsContainer');
+
+    Object.entries(data).forEach(([key, project]) => {
+        const section = document.createElement('section');
+
+        // Title
+        const title = document.createElement('h2');
+        title.textContent = key;
+        section.appendChild(title);
+
+        // Description (EN only)
+        if (project.description?.en) {
+            project.description.en.forEach(text => {
+                const p = document.createElement('p');
+                p.textContent = text;
+                section.appendChild(p);
+            });
+        }
+
+        // Languages
+        if (project.languages) {
+            const lang = document.createElement('p');
+            lang.innerHTML = `<strong>Tech:</strong> ${project.languages.join(', ')}`;
+            section.appendChild(lang);
+        }
+
+        // Image (if exists)
+        if (project.images) {
+            const link = document.createElement('a');
+            link.href = project.source;
+            link.target = "_blank";
+
+            const img = document.createElement('img');
+            img.src = `./resources/images/${project.images}/main.png`;
+            img.style.width = "100%";
+            img.style.maxWidth = "800px";
+
+            link.appendChild(img);
+            section.appendChild(link);
+        }
+
+        // Source link
+        const source = document.createElement('a');
+        source.href = project.source;
+        source.target = "_blank";
+        source.textContent = ">> launch.exe";
+        section.appendChild(source);
+
+        container.appendChild(section);
+    });
+}
+
+loadProjects();
+
+async function loadArtProjects() {
+    const res = await fetch('./json/film.json');
+    const data = await res.json();
+
+    const container = document.getElementById('filmContainer');
+
+    Object.entries(data).forEach(([key, project]) => {
+        const section = document.createElement('section');
+
+        // Title
+        const title = document.createElement('h2');
+        title.textContent = key;
+        section.appendChild(title);
+
+        // Description (EN only)
+        if (project.description?.en) {
+            project.description.en.forEach(text => {
+                const p = document.createElement('p');
+                p.textContent = text;
+                section.appendChild(p);
+            });
+        }
+
+        // Languages
+        if (project.languages) {
+            const lang = document.createElement('p');
+            lang.innerHTML = `<strong>Tech:</strong> ${project.languages.join(', ')}`;
+            section.appendChild(lang);
+        }
+
+        // Image (if exists)
+        if (project.images) {
+            const link = document.createElement('a');
+            link.href = project.source;
+            link.target = "_blank";
+
+            const img = document.createElement('img');
+            img.src = `./resources/images/${project.images}/main.png`;
+            img.style.width = "100%";
+            img.style.maxWidth = "800px";
+
+            link.appendChild(img);
+            section.appendChild(link);
+        }
+
+        // Source link
+        const source = document.createElement('a');
+        source.href = project.source;
+        source.target = "_blank";
+        source.textContent = ">> launch.exe";
+        section.appendChild(source);
+
+        container.appendChild(section);
+    });
+}
+
+loadArtProjects();

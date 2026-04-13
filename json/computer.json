@@ -1,0 +1,253 @@
+{
+    "refurbished_immortality":
+    {
+        "type": "game",
+        "images": "refurbished",
+        "description": 
+        {
+            "en":
+            [
+                "The 1970s, a time when new technology was exploding onto the scenes. We just landed man on the moon, and have so much to tinker with.",
+                "Concepts of old have been harboring around the human mind for a long time. The most prevelant of which, however, being the concept of immortality. The idea of living forever, or at least for a very long time, has been a topic of fascination for centuries.",
+                "This experience asks the question: if one could preserve human organs within this newfound technology, would they be able to achieve immortality?",
+                "This project was created with base JavaScript, HTML, and CSS, and was inspired by the aesthetics of the 1970s. You play as as an unknown viewer who has found a television from a dumpster. They say it was from the recent fire that claimed a laboratory in town, one whose experiments you have only heard rumors about.",
+                "It also came with a set of VHS tapes, peeking your interest, as you, too, have not seen technology similar to this forever. The TV gives a warm glow, and you must venture deep to figure out what these VHS tapes really mean, and the secrets from within..."
+            ],
+            "fr":
+            [
+                "Ce site web, entièrement réalisé en JavaScript, tente de recréer la sensation authentique d'un magnétoscope des années 1970, avec un scénario ARG à l'intérieur.",
+                "Il contient également 6 vidéos, toutes réalisées par moi-même, et était initialement destiné à accompagner l'histoire de Dance With Me."
+            ]
+        },
+        "languages": 
+        [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "source": "https://seangregoryv8.github.io/RefurbishedImmortality/"
+    },
+    "heaven_jumper":
+    {
+        "type": "game",
+        "images": "heaven",
+        "description": 
+        {
+            "en":
+            [
+                "The biggest JS Canvas project to date, this tells the story of a small man and his trip up to the heavens, training to become a warrior of God.",
+                "Made in collaboration with LINK. Code library provided by LINK."
+            ],
+            "fr":
+            [
+                "Le plus grand projet JS Canvas à ce jour, qui raconte l'histoire d'un petit homme et de son voyage dans les cieux, s'entraînant à devenir un guerrier de Dieu.",
+                "Réalisé en collaboration avec LINK. Code library provided by LINK"
+            ]
+        },
+        "descriptionLinks":
+        [
+            "https://www.linkedin.com/in/philippe-lizotte",
+            "https://github.com/VikramSinghMTL"
+        ],
+        "languages": 
+        [
+            "HTML",
+            "CSS",
+            "JavaScript Canvas",
+            "JSON"
+        ],
+        "source": "https://seangregoryv8.github.io/HeavenJumper/"
+    },
+    "sorella":
+    {
+        "type": "game",
+        "images": "sorella",
+        "description": 
+        {
+            "en":
+            [
+                "A big endeavor in P5JS, this game tells the story of a man trying to capture spirits with a magical net in hopes of rescuing his long-dead sister.",
+                "Made for a school mod jam project."
+            ],
+            "fr":
+            [
+                "Fruit d'un travail considérable dans P5JS, ce jeu raconte l'histoire d'un homme qui tente de capturer des esprits à l'aide d'un filet magique dans l'espoir de sauver sa sœur décédée depuis longtemps.",
+                "Réalisé dans le cadre d'un projet scolaire de mod jam."
+            ]
+        },
+        "languages": 
+        [
+            "HTML",
+            "CSS",
+            "JavaScript P5JS"
+        ],
+        "source": "https://seangregoryv8.github.io/cart253/assignments/mod-jam/"
+    },
+    "cube":
+    {
+        "type": "game",
+        "images": "cube",
+        "description": 
+        {
+            "en":
+            [
+                "Inspired by the 1997 movie of the same name, this game involves a player entering through different rooms, gathering artifacts, while avoiding the deadly traps that lay ahead.",
+                "This was my first game ever made using Javascript Canvas."
+            ],
+            "fr":
+            [
+                "Inspiré par le film du même nom sorti en 1997, ce jeu implique un joueur qui traverse différentes pièces, rassemble des artefacts, tout en évitant les pièges mortels qui l'attendent.",
+                "C'est le premier jeu que j'ai réalisé en utilisant Javascript Canvas."
+            ]
+        },
+        "languages": 
+        [
+            "HTML",
+            "CSS",
+            "JavaScript Canvas"
+        ],
+        "source": "https://seangregoryv8.github.io/3W5_Gregory_S/"
+    },
+    "breakthrough":
+    {
+        "type": "game",
+        "images": "break",
+        "description": 
+        {
+            "en":
+            [
+                "Inspired by the classic game of Breakout, this game takes the regular concept and adds 3 new modes to explore, with a classic VCR feel and ELO score that changes the game depending on how well you do!",
+                "This game was created using JavaScript Canvas"
+            ],
+            "fr":
+            [
+                "Inspiré par le film du même nom sorti en 1997, ce jeu implique un joueur qui traverse différentes pièces, rassemble des artefacts, tout en évitant les pièges mortels qui l'attendent.",
+                "C'est le premier jeu que j'ai réalisé en utilisant Javascript Canvas."
+            ]
+        },
+        "languages": 
+        [
+            "HTML",
+            "CSS",
+            "JavaScript Canvas"
+        ],
+        "source": "https://seangregoryv8.github.io/cart253/assignments/variation-jam/"
+    },
+    "madness_zombie_horde":
+    {
+        "type": "game",
+        "images": "madness",
+        "description": 
+        {
+            "en":
+            [
+                "Made for a hackathon, this game was inspired by the artstyle of the Madness: Combat series.",
+                "This features our main protagonist, Dude Guy, defeating endless zombies who cut his power lines, inturrupting his third rewatch of Real Housewives of Nevada.",
+                "Made in collaboration with LINK and LINK."
+            ],
+            "fr":
+            [
+                "Réalisé dans le cadre d'un hackathon, ce jeu a été inspiré par le style artistique de la série Madness : Combat.",
+                "Ce jeu met en scène notre protagoniste principal, Dude Guy, en train de vaincre d'interminables zombies qui ont coupé ses lignes électriques, interrompant ainsi son troisième visionnage de Real Housewives of Nevada.",
+                "Réalisé en collaboration avec LINK et LINK."
+            ]
+        },
+        "descriptionLinks":
+        [
+            "https://github.com/ZacharyTherrien",
+            "https://github.com/mimi717"
+        ],
+        "languages": 
+        [
+            "HTML",
+            "CSS",
+            "JavaScript Canvas"
+        ],
+        "source": "https://zacharytherrien.github.io/ConUHacksVIII/"
+    },
+    "hello_world_news":
+    {
+        "type": "website",
+        "images": "news",
+        "description": 
+        {
+            "en":
+            [
+                "For another hackathon, this concept gives you the control to find news anywhere in the world.",
+                "Using a google maps spreadsheet and API technology, you can now stay more informed than ever with Hello World News!",
+                "Made in collaboration with LINK, LINK and LINK."
+            ],
+            "fr":
+            [
+                "Pour un autre hackathon, ce concept vous donne le contrôle pour trouver des nouvelles n'importe où dans le monde.",
+                "En utilisant une feuille de calcul google maps et la technologie API, vous pouvez maintenant rester plus informé que jamais avec Hello World News !",
+                "Réalisé en collaboration avec LINK, LINK et LINK."
+            ]
+        },
+        "descriptionLinks":
+        [
+            "https://github.com/ZacharyTherrien",
+            "https://github.com/mimi717",
+            "https://github.com/nivekilller"
+        ],
+        "languages": 
+        [
+            "HTML",
+            "CSS",
+            "JavaScript Canvas"
+        ],
+        "source": "https://zacharytherrien.github.io/McHacks-11/"
+    },
+    "slot_machine":
+    {
+        "type": "website",
+        "description": 
+        {
+            "en":
+            [
+                "What's better than a website done in VBA? A game done in VBA!",
+                "Test your luck in the slot machine, roughly done in VBA to guarantee a good time in visual Vegas!"
+            ],
+            "fr":
+            [
+                "Qu'y a-t-il de mieux qu'un site web réalisé en VBA ? Un jeu fait en VBA !",
+                "Tentez votre chance dans la machine à sous, grossièrement réalisée en VBA pour vous garantir un bon moment à Visual Vegas !"
+            ]
+        },
+        "languages": 
+        [
+            "VBA"
+        ],
+        "preview": "./images/refurbished.png",
+        "source": "https://seangregoryv8.github.io/RefurbishedImmortality/"
+    },
+    "plant_checker":
+    {
+        "type": "website",
+        "images": "plant",
+        "description": 
+        {
+            "en":
+            [
+                "This complex machinery is capable of detecting the moisture, health, and light of a houseplant using a raspberry pi.",
+                "However, the part I was in charge of was the urban-esque design pattern for the mobile app to detect everything.",
+                "Complete with changeable colours, hand-drawn portraits, and showcasing various artistic skills to apply flair to something as simple as a plant checker."
+            ],
+            "fr":
+            [
+                "Cette machinerie complexe est capable de détecter l'humidité, la santé et la lumière d'une plante d'intérieur à l'aide d'un raspberry pi.",
+                "Cependant, la partie dont j'étais responsable était le modèle de conception urbain-esque pour l'application mobile permettant de tout détecter.",
+                "Avec des couleurs changeantes, des portraits dessinés à la main et la mise en valeur de diverses compétences artistiques pour donner du cachet à quelque chose d'aussi simple qu'un vérificateur de plantes."
+            ]
+        },
+        "languages": 
+        [
+            "C#",
+            "ASP.NET",
+            "Android Studio",
+            "Raspberry Pi"
+        ],
+        "preview": "./images/refurbished.png",
+        "source": "https://github.com/jac-final-project-w22/course-project-le-sussy-farmers"
+    }
+}
