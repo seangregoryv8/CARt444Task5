@@ -1,6 +1,6 @@
 :root
 {
-    --color-primary: #11226e;
+    --color-primary: #2743c0;
     --color-background: #0D0D0F;
     --color-text: #c0c0c1;
     --color-link: #c0c0cc;
@@ -320,13 +320,17 @@ button
 
 .light-mode
 {
-    --color-primary: #2342cf;
+    --color-primary: #142780;
     --color-background: #ffffff;
     --color-text: #0D0D0F;
     --color-link: #3a3a3a;
     --color-text-muted: #1d0f0f;
     --color-secondary: #64a07c;
     --color-button: rgba(17, 34, 110, 0.85);
+
+    --color-white: rgba(255, 255, 255, 0.75);
+    --color-button-soft: rgba(0, 0, 0, 0.12);
+    --color-glow: rgba(160, 20, 65, 0.18);
 }
 
 .lightDarkToggle, .effectsToggle
@@ -394,14 +398,6 @@ button:focus-visible
 {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
-}
-
-.light-mode {
-    --color-primary: rgba(17, 34, 110, 0.10);
-    --color-accent: rgba(160, 20, 65, 0.10);
-    --color-white: rgba(255, 255, 255, 0.75);
-    --color-button-soft: rgba(0, 0, 0, 0.12);
-    --color-glow: rgba(160, 20, 65, 0.18);
 }
 
 .light-mode button
@@ -516,6 +512,63 @@ tbody td:first-child
     white-space: nowrap;
 }
 
+.fileCard {
+    width: min(100%, 420px);
+    background: var(--panel-bg);
+    border: 1px solid var(--color-text-muted);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    position: relative;
+    overflow: hidden;
+}
+
+.fileCard::before {
+    content: "ARCHIVE NODE";
+    position: absolute;
+    top: var(--space-1);
+    right: var(--space-3);
+    font-size: var(--space-2);
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    opacity: 0.4;
+}
+.fileHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono-bold);
+}
+
+.fileType {
+    color: var(--color-accent);
+    font-size: var(--text-label);
+}
+
+.fileName {
+    color: var(--color-text);
+    font-size: var(--text-body);
+}
+.fileMeta {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    color: var(--color-text-muted);
+    display: flex;
+    justify-content: space-between;
+}
+.fileDownload {
+    width: 100%;
+    justify-content: center;
+}
+.fileCard:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.fileCard:hover::after {
+    opacity: 1;
+}
 .jade
 {
     position: absolute;

@@ -178,3 +178,13 @@ async function fillProjects(data, container)
 
 loadProjects();
 loadArtProjects();
+
+document.querySelectorAll('.fileDownload').forEach(btn => {
+    btn.addEventListener('click', e => {
+        btn.textContent = "extracting...";
+        
+        setTimeout(() => {
+            btn.textContent = "complete";
+        }, 1200);
+    });
+});
