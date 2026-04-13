@@ -35,8 +35,9 @@ function setSidebar()
 
     function addParagraph(text)
     {
-        let p = document.createElement("p");
+        let p = document.createElement("h3");
         p.textContent = text;
+        p.style.fontFamily = "var(--font-display)"
         nav.appendChild(p);
     }
     function addLink(href, text, spanText) {
