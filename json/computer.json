@@ -1,5 +1,5 @@
 {
-    "refurbished_immortality":
+    "refurbished":
     {
         "type": "game",
         "images": "refurbished",
@@ -132,7 +132,7 @@
         ],
         "source": "https://seangregoryv8.github.io/cart253/assignments/variation-jam/"
     },
-    "madness_zombie_horde":
+    "madness_ZH":
     {
         "type": "game",
         "images": "madness",

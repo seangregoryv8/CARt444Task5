@@ -10,6 +10,9 @@
     --color-button: rgba(17, 34, 110, 0.85);
     --color-button-soft: rgba(0, 0, 0, 0.28);
     --color-glow: rgba(160, 20, 65, 0.22);
+    --color-table-head: rgba(17, 34, 110, 0.14);
+    --color-table-row-even: rgba(121, 121, 121, 0.35);
+    --color-table-row-odd: rgba(255, 255, 255, 0.03);
 
     --space-1: 4px;
     --space-2: 8px;
@@ -458,6 +461,60 @@ pre
     transition: opacity 220ms ease;
 }
 
+
+/* Tables (system-wide) */
+table
+{
+    width: min(100%, 980px);
+    margin-top: 18px;
+    padding: 0;
+    border-collapse: collapse;
+    border: 1px solid var(--color-text-muted);
+    background: var(--panel-bg-soft);
+}
+
+thead th
+{
+    font-family: var(--font-mono-semibold);
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    background: var(--color-table-head);
+    border-bottom: 1px solid var(--color-text-muted);
+}
+
+.iconName
+{
+    color: var(--color-link);
+}
+
+th, td
+{
+    padding: var(--space-2) var(--space-3);
+    text-align: left;
+    vertical-align: top;
+    font-family: var(--font-mono);
+    color: var(--color-text);
+    font-size: var(--text-label);
+}
+
+tbody td
+{
+    border-bottom: 1px solid var(--color-table-row-even);
+}
+
+tbody tr:nth-child(even)
+{
+    background: var(--color-table-row-odd);
+}
+
+tbody td:first-child
+{
+    font-family: var(--font-mono-semibold);
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
 @media (max-width: 600px)
 {
     .blackLoadingBox
@@ -472,9 +529,15 @@ pre
 
     .sideBar
     {
+        position: fixed;
+        top: 0;
         height: auto;
         width: 100%;
         z-index: var(--layer-elevated);
+    }
+    .mainContent
+    {
+        margin-top: var(--space-8);
     }
 
     .indexTitle
@@ -495,8 +558,26 @@ pre
         scale: 1;
         top: var(--space-1);
     }
-    .effectsToggle { right: 120px; }
-    .lightDarkToggle { right: 60px; }
+    .effectsToggle { right: var(--space-5); }
+    .lightDarkToggle { right: 0px; }
+    .sideBarHeader > :nth-child(3)
+    {
+        position: fixed;
+        top: var(--space-1);
+        right: calc(var(--space-5) * 2);
+    }
+    .sideBarHeader > :nth-child(4)
+    {
+        position: fixed;
+        top: var(--space-1);
+        right: calc(var(--space-5) * 3);
+    }
+    .sideBarHeader > :nth-child(5)
+    {
+        position: fixed;
+        top: var(--space-1);
+        right: calc(var(--space-5) * 4);
+    }
 
     .checklist
     {        
@@ -530,4 +611,5 @@ pre
     h2 { font-size: calc(var(--text-headline) * 0.6); margin-top: var(--space-2); }
     h4 { font-size: calc(var(--text-category) * 0.7); }
     p { font-size: calc(var(--text-body) * 0.6); }
+    th, td { font-size: calc(var(--text-body) * 0.6); }
 }

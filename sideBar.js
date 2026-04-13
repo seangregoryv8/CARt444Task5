@@ -70,6 +70,31 @@ function setSidebar()
     addLink("projectsArt.html", "art", "jpg");
 
     div.appendChild(nav);
+    
+    // Create the social links with icons
+    let socialLinks = [
+        { href: "mailto:seangregoryv8@gmail.com", x: 1, y: 4 },
+        { href: "https://github.com/seangregoryv8", x: 1, y: 1 },
+        { href: "https://www.linkedin.com/in/sean-gregory-v8/", x: 0, y: 0 }
+    ];
+
+    // Loop through the social links and create the corresponding elements
+    socialLinks.forEach(link => {
+        let anchor = document.createElement("a");
+        anchor.href = link.href;
+        anchor.target = "_blank";
+        anchor.rel = "noopener noreferrer";
+
+        let iconDiv = document.createElement("div");
+        iconDiv.classList.add("icon");
+        iconDiv.style.marginLeft = "var(--space-4)";
+        iconDiv.style.marginBottom = "var(--space-3)";
+        iconDiv.style.setProperty('--x', link.x);
+        iconDiv.style.setProperty('--y', link.y);
+
+        anchor.appendChild(iconDiv);  // Append icon to anchor
+        div.appendChild(anchor);      // Append anchor to sidebar
+    });
     aside.appendChild(div);
 
     document.body.appendChild(aside);

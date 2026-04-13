@@ -12,12 +12,16 @@
     <div class="mainContent">
         <section>
             <h4>SYSTEM_PHILOSOPHY_00</h4>
+            <div class="icon inlineIcon" style="--x:1; --y:3; "></div>
             <h1>philosophy<span>.pla</span></h1>
         </section>
 
         <section>
             <h2>why<span>.am</span></h2>
-            <p>Most of what I do centers around a set of hardened principles and guidelines, taught to me by my past of computers, alongside my upbringing.</p>
+            <p>Most of what I do centers around a set of hardened principles and guidelines, taught to me by my past of computers, alongside my upbringing.
+                <br><br>
+            I grew up in a blue-collar family, where the value of hard work and practicality was instilled in me from a young age. My father, a skilled carpenter, taught me the importance of understanding how things work and fixing them when they break. This hands-on approach to problem-solving has greatly influenced my design philosophy, which emphasizes functionality and clarity over aesthetics.
+            </p>
         </section>
         <section>
             <h2>inside_the_box<span>.break</span></h2>
@@ -32,155 +36,24 @@
         </section>
 
         <section>
-            <h2>effects_as_language<span>.crt</span></h2>
-            <p>The CRT filter isn’t decoration—it’s a narrative device. Scanlines and flicker suggest analog hardware; the moving scanline reads like a refresh pass; subtle colour split evokes phosphor bloom. Effects are intentionally toggleable so the system can switch from “vibe” to “reading mode.”</p>
-            <table aria-label="Effects rationale table">
-                <thead>
-                    <tr>
-                        <th>effect</th>
-                        <th>does</th>
-                        <th>why</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>scanlines</td>
-                        <td>horizontal banding overlay</td>
-                        <td>recalls CRT phosphor rows; immediately signals the era</td>
-                    </tr>
-                    <tr>
-                        <td>flicker</td>
-                        <td>subtle opacity noise</td>
-                        <td>adds “alive” screen feel without changing layout</td>
-                    </tr>
-                    <tr>
-                        <td>scanline sweep</td>
-                        <td>moving line across viewport</td>
-                        <td>reads like a refresh/boot diagnostic pass</td>
-                    </tr>
-                    <tr>
-                        <td>text shadow</td>
-                        <td>colour split around text</td>
-                        <td>mimics signal bleed; boosts retro identity</td>
-                    </tr>
-                    <tr>
-                        <td>slowload blackbox</td>
-                        <td>blackbox that blocks visibility for a second</td>
-                        <td>resembles when computer diodes had to slowly load in</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2>statement<span>.iam</span></h2>
+            <p>What can systems of old teach us? What do we know about these old systems? And what do we not?
+                <br><br>
+            I work in a hands-on approach, pulling from analog media, physical carpentry, and various different engines to create environments that behave on their own terms. My works ask important questions, what these old systems would look like should they gather a mind of their own.
+            
+                <br><br>
+            I’m drawn to cosmic horror, not as imagery, but as structure. The idea of an entity running beneath our very existence, following and obeying rules we don’t understand. Rather than explaining, I build up these rules and let them breathe on their own, giving the user the opportunity to see systems loop, degrade, respond incorrectly, or evolve in ways that feel slightly off. I set up rules so you can understand them and see when they’re broken, understanding when something feels slightly off. I want you to understand a system enough to see it doing something just outside of your control.
+            
+                <br><br>
+            My process is closer to fabrication than traditional art-making. I treat code, assets, characters, animations, and set pieces like components in a machine, assembling and reworking them until they start to push back. When one notices visual glitches or instability within the machine, they are not problems that need fixing, they’re a sign of a solid foundation generating natural error to keep you on your toes.
+            
+                <br><br>
+            I’m not interested in static pieces. I want to build things that feel alive, persistent, and, most important, hostile. Just like the analog systems of old, they run in the background without you knowing, with or without your input, doing things you may not expect, and hiding secrets you’ll never know.
+            </p>
         </section>
-
-        <section>
-            <h2>xp_boot_vibe<span>.mbr</span></h2>
-            <p>The interaction mood is inspired by powering up an early-2000s PC (Windows XP era): clear status states, patient transitions, and interface elements that feel like physical controls. The “boot” idea shows up as: a sequence-like layout rhythm, measured headings, and effects that imply a screen waking up.</p>
-            <table aria-label="Boot sequence inspiration table">
-                <thead>
-                    <tr>
-                        <th>cue</th>
-                        <th>how it shows up here</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>startup hierarchy</td>
-                        <td>big titles, clear section headers, calm body text—like boot messages and control panels</td>
-                    </tr>
-                    <tr>
-                        <td>diagnostic clarity</td>
-                        <td>tables, tokens, and specs are formatted like logs/manuals (repeatable and scan-friendly)</td>
-                    </tr>
-                    <tr>
-                        <td>signal/inputs</td>
-                        <td>icons and labels behave like hardware glyphs: minimal, consistent, and functional</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>foundations_map<span>.map</span></h2>
-            <p>Each foundation page describes a single part of the system. Together they form a complete, remixable “kit” with consistent rails, scales, and labels.</p>
-            <table aria-label="Foundations index table">
-                <thead>
-                    <tr>
-                        <th>page</th>
-                        <th>what it explains</th>
-                        <th>what to look for</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr onclick="window.location='types/grid.html'" style="cursor: pointer;">
-                        <td>grid_system<span>.mnl</span></td>
-                        <td>columns, gutters, margins, content width</td>
-                        <td>annotated overlay + grid measurements + CSS implementation</td>
-                    </tr>
-                    <tr onclick="window.location='types/spacing.html'" style="cursor: pointer;">
-                        <td>spacing_scale<span>.maa</span></td>
-                        <td>spacing cadence and tokens</td>
-                        <td>scale swatches + component padding demo</td>
-                    </tr>
-                    <tr onclick="window.location='types/breakpoints.html'" style="cursor: pointer;">
-                        <td>breakpoints<span>.log</span></td>
-                        <td>responsive ranges and layout rails</td>
-                        <td>breakpoint ruler + implementation snippet</td>
-                    </tr>
-                    <tr onclick="window.location='types/layers.html'" style="cursor: pointer;">
-                        <td>layer_stack<span>.str</span></td>
-                        <td>depth rules and z-index tokens</td>
-                        <td>stack demo (base/content/elevated/overlay)</td>
-                    </tr>
-                    <tr onclick="window.location='types/color.html'" style="cursor: pointer;">
-                        <td>colour_palette<span>.sig</span></td>
-                        <td>colour roles and combinations</td>
-                        <td>role swatches + usage combos + token snippet</td>
-                    </tr>
-                    <tr onclick="window.location='types/typography.html'" style="cursor: pointer;">
-                        <td>typography_specimen<span>.typ</span></td>
-                        <td>font pairing and type scale</td>
-                        <td>tables + token-driven scale + CSS implementation</td>
-                    </tr>
-                    <tr onclick="window.location='types/ratios.html'" style="cursor: pointer;">
-                        <td>image_ratios<span>.fra</span></td>
-                        <td>aspect ratio roles</td>
-                        <td>safe-area ratio frames + implementation snippet</td>
-                    </tr>
-                    <tr onclick="window.location='types/icons.html'" style="cursor: pointer;">
-                        <td>icon_library<span>.sym</span></td>
-                        <td>sprite-based glyph library</td>
-                        <td>full sprite preview + sizing table + examples</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>documentation_approach<span>.doc</span></h2>
-            <p>Documentation is written like a manual: short paragraphs, labeled tables, and “image-like” demos. Every rule is intended to be implementable—not just aesthetic.</p>
-            <table aria-label="Documentation format table">
-                <thead>
-                    <tr>
-                        <th>section type</th>
-                        <th>purpose</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>tables</td>
-                        <td>clear, searchable specs (values, roles, and constraints)</td>
-                    </tr>
-                    <tr>
-                        <td>demos</td>
-                        <td>visual proof of the rule (overlays, swatches, rulers, stacks)</td>
-                    </tr>
-                    <tr>
-                        <td>css_implementation</td>
-                        <td>copy-paste scaffolding that ties back to <code>:root</code> tokens</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <div class="icon effectsToggle" style="--x:2; --y:4" onclick="toggleEffects()" role="button" tabindex="0" aria-label="Toggle CRT effects" aria-pressed="false"></div>
+        <div class="icon lightDarkToggle" style="--x:3; --y:3" onclick="toggleTheme()" role="button" tabindex="0" aria-label="Toggle theme"></div>
+    </div>
 
     <script src="./newScript.js"></script>
 </body>

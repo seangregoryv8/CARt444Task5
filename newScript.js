@@ -6,10 +6,17 @@ function setToggleIcon(isLight) {
     btn.style.setProperty("--y", 3);
 
     document.querySelector(".effectsToggle").style.setProperty("--x", isLight ? 2 : 3);
-
-    let icons = document.getElementsByClassName("iconInline");
+    document.getElementsByClassName("sideBarHeader")[0].children[2].children[0].style.setProperty("--x", isLight ? 0 : 1);
+    document.getElementsByClassName("sideBarHeader")[0].children[3].children[0].style.setProperty("--x", isLight ? 0 : 1);
+    let icons = document.getElementsByClassName("inlineIcon");
     for (let i = 0; i < icons.length; i++)
-        icons[i].style.setProperty("--x", isLight ? 2 : 3)
+    {
+        let x = icons[i].style.getPropertyValue("--x");
+        if (x === "0" || x === "1")
+            icons[i].style.setProperty("--x", isLight ? 0 : 1);
+        else if (x === "2" || x === "3")
+            icons[i].style.setProperty("--x", isLight ? 2 : 3);
+    }
 }
 
 function applyTheme(isLight) {
