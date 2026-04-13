@@ -13,6 +13,7 @@
     --color-table-head: rgba(17, 34, 110, 0.14);
     --color-table-row-even: rgba(121, 121, 121, 0.35);
     --color-table-row-odd: rgba(255, 255, 255, 0.03);
+    --color-crt: rgba(255,255,255,0.03);
 
     --space-1: 4px;
     --space-2: 8px;
@@ -515,8 +516,43 @@ tbody td:first-child
     white-space: nowrap;
 }
 
+.jade
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    image-rendering: pixelated;
+}
+.jadeText
+{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0;
+    font-size: var(--text-label);
+    color: var(--color-link);
+    text-shadow: 2px 0 red, -2px 0 blue;
+}
+
+#viewModeLabel
+{
+    font-family: var(--font-display);
+    position: absolute;
+    bottom: var(--radius-head);
+    left: var(--radius-md);
+    font-size: var(--text-body);
+    color: var(--color-text-muted);
+}
+
 @media (max-width: 600px)
 {
+    #viewModeLabel
+    {
+        position: fixed;
+        bottom: var(--radius-lg);
+        right: var(--radius-lg);
+    }
     .blackLoadingBox
     {
         left: 0;
@@ -612,4 +648,131 @@ tbody td:first-child
     h4 { font-size: calc(var(--text-category) * 0.7); }
     p { font-size: calc(var(--text-body) * 0.6); }
     th, td { font-size: calc(var(--text-body) * 0.6); }
+}
+
+@media (min-width: 601px) and (max-width: 768px)
+{
+    .blackLoadingBox
+    {
+        left: 25%;
+        width: 75%;
+    }
+    body
+    {
+        grid-template-columns: 25% auto;
+    }
+
+    .checklist
+    {
+        padding: var(--space-2);
+    }
+
+    .mainContent {
+        padding: var(--space-5);
+    }
+
+    section {
+        max-width: 90%;
+    }
+    
+    h1 {
+        font-size: calc(var(--text-display) * 0.4);
+        margin-top: var(--space-3);
+     }
+    h2 { font-size: calc(var(--text-headline) * 0.6); margin-top: var(--space-2); }
+    h4 { font-size: calc(var(--text-category) * 0.9); }
+    p { font-size: calc(var(--text-body) * 0.6); }
+    th, td { font-size: calc(var(--text-body) * 0.6); }
+    
+    .effectsToggle, .lightDarkToggle
+    {
+        z-index: var(--layer-elevated);
+        scale: 2;
+        right: var(--space-4);
+    }
+    .effectsToggle { top: calc(var(--space-5) * 3); }
+    .lightDarkToggle { top: var(--space-5); }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px)
+{
+    
+    .blackLoadingBox
+    {
+        left: 20%;
+        width: 80%;
+    }
+    body
+    {
+        grid-template-columns: 20% auto;
+    }
+
+    .checklist
+    {
+        padding: var(--space-2);
+    }
+
+    .mainContent {
+        padding: var(--space-5);
+    }
+
+    section {
+        max-width: 90%;
+    }
+    
+    h1 {
+        font-size: calc(var(--text-display) * 0.6);
+        margin-top: var(--space-3);
+     }
+    h2 { font-size: calc(var(--text-headline) * 0.8); margin-top: var(--space-2); }
+    h4 { font-size: calc(var(--text-category) * 0.9); }
+    p { font-size: calc(var(--text-body) * 0.7); }
+    th, td { font-size: calc(var(--text-body) * 0.7); }
+    
+    .effectsToggle, .lightDarkToggle
+    {
+        z-index: var(--layer-elevated);
+        scale: 2;
+        right: var(--space-4);
+    }
+    .effectsToggle { top: calc(var(--space-5) * 3); }
+    .lightDarkToggle { top: var(--space-5); }
+}
+
+/* CRT */
+@media (min-width: 1025px) and (max-width: 1280px)
+{
+    p
+    {
+        font-size: var(--text-label);
+    }
+    body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: repeating-linear-gradient(
+            to bottom,
+            var(--color-crt),
+            var(--color-crt) 2px,
+            transparent 2px,
+            transparent 4px
+        );
+        pointer-events: none;
+    }
+
+    h1, h2 {
+        text-shadow: 2px 0 red, -2px 0 blue;
+    }
+    
+    h1 {
+        font-size: calc(var(--text-display) * 0.8);
+        margin-top: var(--space-3);
+     }
+    h2 { font-size: calc(var(--text-headline) * 0.8); margin-top: var(--space-2); }
+    h4 { font-size: calc(var(--text-category) * 0.9); }
+    p { font-size: calc(var(--text-body) * 0.8); }
+    th, td { font-size: calc(var(--text-body) * 0.8); }
+    .jade { opacity: 0.6; }
+    .jadeText { opacity: 1; }
 }

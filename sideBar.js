@@ -95,9 +95,50 @@ function setSidebar()
         anchor.appendChild(iconDiv);  // Append icon to anchor
         div.appendChild(anchor);      // Append anchor to sidebar
     });
+
+    let viewModeLabel = document.createElement("div");
+    viewModeLabel.id = "viewModeLabel"
+    div.appendChild(viewModeLabel);
     aside.appendChild(div);
 
     document.body.appendChild(aside);
+
+    let jade = document.createElement("img");
+    jade.classList.add("jade");
+    jade.src = "./resources/images/jade.webp";
+    document.body.appendChild(jade);
+
+    let jadeText = document.createElement("p");
+    jadeText.classList.add("jadeText");
+    jadeText.textContent = "god_loves_you";
+    document.body.appendChild(jadeText);
 }
 
 setSidebar();
+
+function updateViewMode() {
+    const width = window.innerWidth;
+    const label = document.getElementById("viewModeLabel");
+
+    if (width <= 600) {
+        label.textContent = "VIEW: MOBILE";
+    }
+    else if (width <= 768) {
+        label.textContent = "VIEW: MOBILE LANDSCAPE";
+    }
+    else if (width <= 1024) {
+        label.textContent = "VIEW: TABLET";
+    }
+    else if (width <= 1280) {
+        label.textContent = "VIEW: CRT MODE";
+    }
+    else if (width <= 1920) {
+        label.textContent = "VIEW: DESKTOP";
+    }
+    else {
+        label.textContent = "VIEW: WIDE";
+    }
+}
+
+window.addEventListener("resize", updateViewMode);
+window.addEventListener("load", updateViewMode);
