@@ -68,7 +68,7 @@ function setSidebar()
     addBreak();
     addParagraph("projects (1).col");
     addLink("projectsComp.html", "computers", "exe");
-    addLink("projectsArt.html", "art", "jpg");
+    addLink("projectsArt.html", "videos", "mp4");
 
     div.appendChild(nav);
     

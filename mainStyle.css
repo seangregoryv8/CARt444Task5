@@ -4,7 +4,7 @@
     --color-background: #0D0D0F;
     --color-text: #c0c0c1;
     --color-link: #c0c0cc;
-    --color-accent: #a01441;
+    --color-accent: #db3b6e;
     --color-secondary: #24382c;
     --color-text-muted: #797979;
     --color-button: rgba(17, 34, 110, 0.85);
@@ -324,6 +324,7 @@ button
     --color-background: #ffffff;
     --color-text: #0D0D0F;
     --color-link: #3a3a3a;
+    --color-accent: #a01441;
     --color-text-muted: #1d0f0f;
     --color-secondary: #64a07c;
     --color-button: rgba(17, 34, 110, 0.85);
