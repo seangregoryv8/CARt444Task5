@@ -111,6 +111,7 @@
     "breakthrough":
     {
         "type": "game",
+        "images": "break",
         "description": 
         {
             "en":
